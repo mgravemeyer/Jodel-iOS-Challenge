@@ -27,23 +27,23 @@ Use Auto Layout when possible.
 
 ### Architecture
 
-• We would like you to use the MVVM architecture or an iteration of MVVM. Try to solve the problem of mixing business and presentation logic in the View Model
+
+• The project should follow the SOLID principles.
 
 • The project should be very easy to unit test. The project should have at least one unit test
 
 • The current boilerplate code has some Objective-C code. You can rewrite it to Swift or keep it as it is.
 
-• Feel free to choose the Observer mechanism (RxSwift, ReactiveCocoa, your own creation)
-
-• Support error scenarios by simply showing an alert view
+• Support error scenarios by simply showing an alert view (or some toast view)
 
 • Feel free to use any third-party libraries
+
 
 ### Requirements
 
 • The feed should be vertical, one picture per row
 
-• The app should cache the images so they're available when the app is offline
+• Each cell should display the image and the image's title
 
 • The app should implement pagination for the pictures feed
 
@@ -53,7 +53,6 @@ Use Auto Layout when possible.
 
 • Main feed should be reloadable by pull to refresh control
 
-• Each cell should display the image and the image's title
 
 *Pssst... [here's](https://github.com/raywenderlich/swift-style-guide) an amazing style guide for Swift*
 
