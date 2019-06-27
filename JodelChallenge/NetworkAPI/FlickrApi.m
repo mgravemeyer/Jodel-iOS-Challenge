@@ -9,7 +9,7 @@
 
 @implementation FlickrApi
 
-+ (void)fetchPhotosWithCompletion:(void (^)(NSArray *, NSError *))completion {
++ (void)fetchPhotosWithCompletion:(void (^)(NSArray <NSURL *>*, NSError *))completion {
     FlickrKit *fk = [FlickrKit sharedFlickrKit];
 
     [fk initializeWithAPIKey:@"92111faaf0ac50706da05a1df2e85d82" sharedSecret:@"89ded1035d7ceb3a"];
@@ -24,12 +24,15 @@
             photoURLs = [NSMutableArray array];
             for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
                 NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-                [photoURLs addObject:url];
+                if (url) {
+                    [photoURLs addObject:url];
+                }
             }
         }
         if (completion) {
-            completion(photoURLs, error);
+            completion([photoURLs copy], error);
         }
     }];
 }
+
 @end
