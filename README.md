@@ -17,13 +17,13 @@ JodelChallenge is an app for showing [Flickr](https://www.flickr.com) pictures i
 
 Remember, our goal is not to *compare* and *grade* the projects, but to get to know you better. We care about the quality, not quantity, we don't want you to waste your precious time.
 
-Use Swift 4.0 and Xcode 9.0.
+Use Swift.
 
 ### Interface
 
 We don't *"grade"* projects based on how much time you've spent designing and polishing UI so don't waste time on that. All we care about is *tidiness* of the UI: equal margins, logical view hierarchy, logical layout constraints.
 
-Use Auto Layout when possible. Please decide between Xib vs. Storyboards, we would love to know your opinion on that one.
+Use Auto Layout when possible.
 
 ### Architecture
 
@@ -31,7 +31,7 @@ Use Auto Layout when possible. Please decide between Xib vs. Storyboards, we wou
 
 • The project should be very easy to unit test. The project should have at least one unit test
 
-• The current boilerplate code is in Objective-C. The networking layer should stay in Objective-C and the rest of the app should be in Swift
+• The current boilerplate code has some Objective-C code. You can rewrite it to Swift or keep it as it is.
 
 • Feel free to choose the Observer mechanism (RxSwift, ReactiveCocoa, your own creation)
 
@@ -50,6 +50,8 @@ Use Auto Layout when possible. Please decide between Xib vs. Storyboards, we wou
 • User should be able to tap the pictures in the feed to preview them in fullscreen
 
 • The app should show loading indicators when the feed is loading
+
+• Main feed should be reloadable by pull to refresh control
 
 • Each cell should display the image and the image's title
 
