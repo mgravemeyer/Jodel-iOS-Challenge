@@ -5,7 +5,7 @@ DEPENDENCIES:
   - FlickrKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - FlickrKit
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: bc53717cdc4fd844fcf115b6790f361a2969e2bc
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.9.0
