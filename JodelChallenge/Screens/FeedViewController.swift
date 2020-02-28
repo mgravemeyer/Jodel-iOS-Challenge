@@ -10,16 +10,20 @@ import UIKit
 
 class FeedViewController : UICollectionViewController {
     
-    var photos : [URL] = []
+    var photos : [Photo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FlickrApi.fetchPhotos { [weak self] (responsePhotos, error) in
-            self?.photos = responsePhotos ?? []
-            DispatchQueue.main.async(execute: {
-                self?.collectionView?.reloadData()
-            })
+        FlickrApi().fetchPhotosWithCompletion { (photosFetched, error) in
+            if error == nil {
+                DispatchQueue.main.async(execute: {
+                    self.photos = photosFetched!
+                    self.collectionView?.reloadData()
+                })
+            } else {
+                print(error)
+            }
         }
     }
     
@@ -29,7 +33,8 @@ class FeedViewController : UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as! FeedCell
-        cell.configure(with: photos[indexPath.row])
+        cell.configure(with: photos[indexPath.row].photoURL)
         return cell
     }
+    
 }
