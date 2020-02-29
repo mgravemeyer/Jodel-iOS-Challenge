@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--Photos-->
         <scene sceneID="vve-ha-RJW">
             <objects>
                 <collectionViewController id="GZw-80-Ba9" customClass="FeedViewController" customModule="JodelChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,19 +47,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-oE-nWL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-oE-nWL">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         </imageView>
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uf6-KN-4yq">
+                                            <rect key="frame" x="0.0" y="33" width="50" height="17"/>
+                                            <color key="backgroundColor" red="0.96448498959999995" green="0.73875045780000004" blue="0.25864753130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Uf6-KN-4yq" secondAttribute="trailing" id="Ari-fK-P0W"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="top" secondItem="HNq-Nl-u9j" secondAttribute="top" id="a0v-Wd-JhM"/>
+                                    <constraint firstItem="Uf6-KN-4yq" firstAttribute="leading" secondItem="HNq-Nl-u9j" secondAttribute="leading" id="fIq-SE-NSg"/>
                                     <constraint firstItem="gBN-oE-nWL" firstAttribute="leading" secondItem="HNq-Nl-u9j" secondAttribute="leading" id="nSn-Ww-eB7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uf6-KN-4yq" secondAttribute="bottom" id="onZ-D3-rh6"/>
                                     <constraint firstAttribute="trailing" secondItem="gBN-oE-nWL" secondAttribute="trailing" id="qhT-oS-fhh"/>
                                     <constraint firstAttribute="bottom" secondItem="gBN-oE-nWL" secondAttribute="bottom" id="qrn-bi-MTC"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="gBN-oE-nWL" id="T5b-K3-bfF"/>
+                                    <outlet property="textView" destination="Uf6-KN-4yq" id="b8k-cT-ikW"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -70,11 +78,14 @@
                             <outlet property="delegate" destination="GZw-80-Ba9" id="sDL-yF-Dy1"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="q7C-rv-ccb"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="CameraTabItem" selectedImage="CameraTabItem" id="q7C-rv-ccb"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rh-DI-kkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="-174"/>
+            <point key="canvasLocation" x="757.60000000000002" y="-174.06296851574214"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CameraTabItem" width="25" height="25"/>
+    </resources>
 </document>

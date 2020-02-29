@@ -38,13 +38,13 @@ Use Auto Layout when possible.
 
 ### Requirements
 
-• The feed should be vertical, one picture per row
+• The feed should be vertical, one picture per row - CHECK
 
-• Each cell should display the image and the image's title
+• Each cell should display the image and the image's title - CHECK
 
 • The app should implement pagination for the pictures feed
 
-• User should be able to tap the pictures in the feed to preview them in fullscreen
+• User should be able to tap the pictures in the feed to preview them in fullscreen - CHECK
 
 • The app should show loading indicators when the feed is loading
 
@@ -54,5 +54,3 @@ Use Auto Layout when possible.
 *Pssst... [here's](https://github.com/raywenderlich/swift-style-guide) an amazing style guide for Swift*
 
 **Good luck**!
-
-

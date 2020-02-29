@@ -1,16 +1,20 @@
 PODS:
   - FlickrKit (1.0.9)
+  - ProgressHUD (2.70)
 
 DEPENDENCIES:
   - FlickrKit
+  - ProgressHUD
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - FlickrKit
+    - ProgressHUD
 
 SPEC CHECKSUMS:
   FlickrKit: 79ffaf64a12293ba2b1aa8a2e53a4958cb113256
+  ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
 
-PODFILE CHECKSUM: bc53717cdc4fd844fcf115b6790f361a2969e2bc
+PODFILE CHECKSUM: 3016d0eae840d7def53e6817b1cc9d05e367c351
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.8.4

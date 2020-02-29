@@ -23,8 +23,8 @@ class FlickrApi {
                 for photoDictionary in photoArray {
                     //TODO: Avoid Force Unwrap
                     photos.append(Photo(
-                        id: photoDictionary["title"]! as! String,
-                        photoURL: fk.photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)))
+                        title: photoDictionary["title"]! as! String,
+                        photoURL: fk.photoURL(for: FKPhotoSize.medium800, fromPhotoDictionary: photoDictionary)))
                 }
                 completion(photos, nil)
             } else if error != nil {
