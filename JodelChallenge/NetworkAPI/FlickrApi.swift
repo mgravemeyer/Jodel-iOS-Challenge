@@ -9,9 +9,8 @@
 import Foundation
 
 class FlickrApi {
+    
     func fetchPhotosWithCompletion(completion: @escaping([Photo]?, Error?) -> ()) {
-        
-        DispatchQueue.main.async{
         ProgressHUD.show()
         var photos: [Photo] = []
         let fk = FlickrKit.shared()
@@ -34,7 +33,6 @@ class FlickrApi {
             } else if error != nil {
                 completion(nil, error)
             }
-        }
         }
     }
 }
