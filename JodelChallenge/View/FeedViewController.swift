@@ -7,9 +7,22 @@
 //
 
 import UIKit
-import ProgressHUD
 
 class FeedViewController : UICollectionViewController {
+    
+    func fetchPhotos() {
+        FlickrApi().fetchPhotosWithCompletion { (photosFetched, error) in
+            if error == nil {
+                DispatchQueue.main.async(execute: {
+                    ProgressHUD.showSuccess("Photos loaded")
+                    self.photos = photosFetched!
+                    self.collectionView?.reloadData()
+                })
+            } else {
+                ProgressHUD.showError("\(error!.localizedDescription)")
+            }
+        }
+    }
     
     var photos: [Photo] = []
     
@@ -26,16 +39,8 @@ class FeedViewController : UICollectionViewController {
         let color = UIColor(red: 242.0/255.0, green: 157.0/255.0, blue: 58.0/255.0, alpha: 1.0)
         UITabBar.appearance().tintColor = color
         
-        FlickrApi().fetchPhotosWithCompletion { (photosFetched, error) in
-            if error == nil {
-                DispatchQueue.main.async(execute: {
-                    self.photos = photosFetched!
-                    self.collectionView?.reloadData()
-                })
-            } else {
-                ProgressHUD.showError("\(error!.localizedDescription)")
-            }
-        }
+        fetchPhotos()
+
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

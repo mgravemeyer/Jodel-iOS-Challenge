@@ -10,6 +10,9 @@ import Foundation
 
 class FlickrApi {
     func fetchPhotosWithCompletion(completion: @escaping([Photo]?, Error?) -> ()) {
+        
+        DispatchQueue.main.async{
+        ProgressHUD.show()
         var photos: [Photo] = []
         let fk = FlickrKit.shared()
         fk.initialize(withAPIKey: "92111faaf0ac50706da05a1df2e85d82", sharedSecret: "89ded1035d7ceb3a")
@@ -21,6 +24,7 @@ class FlickrApi {
         fk.call(interesting) { (response, error) -> Void in
             if let response = response, let photoArray = fk.photoArray(fromResponse: response) {
                 for photoDictionary in photoArray {
+                    print(photoDictionary)
                     //TODO: Avoid Force Unwrap
                     photos.append(Photo(
                         title: photoDictionary["title"]! as! String,
@@ -30,6 +34,7 @@ class FlickrApi {
             } else if error != nil {
                 completion(nil, error)
             }
+        }
         }
     }
 }
