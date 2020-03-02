@@ -52,8 +52,9 @@
                                         </imageView>
                                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uf6-KN-4yq">
                                             <rect key="frame" x="0.0" y="33" width="50" height="17"/>
-                                            <color key="backgroundColor" red="0.96448498959999995" green="0.73875045780000004" blue="0.25864753130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="backgroundColor" red="0.96470588235294119" green="0.73725490196078436" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
@@ -79,6 +80,9 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Photos" image="CameraTabItem" selectedImage="CameraTabItem" id="q7C-rv-ccb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Je6-1H-LZ7" id="rIE-nY-xcs"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rh-DI-kkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

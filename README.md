@@ -21,19 +21,19 @@ Remember, our goal is not to *compare* and *grade* the projects, but to get to k
 
 We don't *"grade"* projects based on how much time you've spent designing and polishing UI so don't waste time on that. All we care about is *tidiness* of the UI: equal margins, logical view hierarchy, logical layout constraints.
 
-Use Auto Layout when possible.
+Use Auto Layout when possible. - USED Auto Layout
 
 ### Architecture
 
 • The project should follow the SOLID principles.
 
-• The current boilerplate code has some Objective-C code. You can rewrite it to Swift or keep it as it is.
+• The current boilerplate code has some Objective-C code. You can rewrite it to Swift or keep it as it is. - MIGRATED
 
-• Support error scenarios by simply showing an alert view (or some toast view).
+• Support error scenarios by simply showing an alert view (or some toast view). - CHECK
 
-• Feel free to use any third-party libraries.
+• Feel free to use any third-party libraries. - USED ProgressHUD via CocoaPods
 
-• The project should be very easy to unit test. The project should have at least one unit test.
+• The project should be very easy to unit test. The project should have at least one unit test. - MVC Design Pattern
 
 
 ### Requirements
@@ -42,13 +42,13 @@ Use Auto Layout when possible.
 
 • Each cell should display the image and the image's title - CHECK
 
-• The app should implement pagination for the pictures feed
+• The app should implement pagination for the pictures feed - CHECK
 
 • User should be able to tap the pictures in the feed to preview them in fullscreen - CHECK
 
-• The app should show loading indicators when the feed is loading
+• The app should show loading indicators when the feed is loading - CHECK
 
-• Main feed should be reloadable by pull to refresh control
+• Main feed should be reloadable by pull to refresh control - CHECK
 
 
 *Pssst... [here's](https://github.com/raywenderlich/swift-style-guide) an amazing style guide for Swift*
