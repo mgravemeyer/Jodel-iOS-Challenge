@@ -1,6 +1,9 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  JodelChallenge-Bridging-Header.h
+//  JodelChallenge
 //
+//  Created by Maximilian Gravemeyer on 27.02.20.
+//  Copyright © 2020 Jodel. All rights reserved.
 
 #import <ProgressHUD/ProgressHUD.h>
 #import <UIKit/UIKit.h>

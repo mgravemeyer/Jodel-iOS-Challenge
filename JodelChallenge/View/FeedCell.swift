@@ -13,19 +13,19 @@ class FeedCell : UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextField!
     
-    let imageListController = ImageListContoller()
+    let imageZoomContoller = ImageZoomContoller()
     
     public func configure(with image : Photo) {
-        if let data = try? Data(contentsOf: image.photoURL) {
+        if let data = try? Data(contentsOf: image.getPhotoURL()) {
             imageView.image = UIImage(data: data)
-            textView.text = image.title
+            textView.text = image.getTitle()
         }
     }
     
     override var isHighlighted: Bool {
         didSet {
             if self.isHighlighted {
-                imageListController.performZoom(startImageView: self.imageView)
+                imageZoomContoller.performZoom(cellImageView: self.imageView)
             }
         }
     }

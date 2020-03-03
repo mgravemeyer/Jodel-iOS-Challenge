@@ -25,7 +25,7 @@ Use Auto Layout when possible. - USED Auto Layout
 
 ### Architecture
 
-• The project should follow the SOLID principles.
+• The project should follow the SOLID principles. - CHECK
 
 • The current boilerplate code has some Objective-C code. You can rewrite it to Swift or keep it as it is. - MIGRATED
 
