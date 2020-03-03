@@ -13,24 +13,42 @@ class JodelChallengeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        print("Test finished")
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFlickrAPICall() {
+        let expectation = XCTestExpectation.init(description: "Should return Array of Photo with 20 photos, requires internet connection")
+        
+    FlickrAPIFetchController().fetchPhotosWithCompletion(isFirstTime: true, isScrollDown: false, items: 20) { (photoArray, error) in
+            
+            if error != nil {
+                XCTFail("Fail: \(error.debugDescription)")
+            }
+        
+            if photoArray == nil {
+                XCTFail("Photo Array is empty")
+            }
+        
+            if photoArray!.count == 20 {
+                expectation.fulfill()
+            }
+        
         }
     }
     
+    func testPhotoModel() {
+        
+        let expectation = XCTestExpectation.init(description: "Should return a String and a URL from the Photo object through the methods .title() and .url()")
+        
+        let photoModel = Photo(title: "testTitle", url: URL(string: "url")!)
+        
+        XCTAssertEqual(photoModel.getTitle(), String("testTitle"))
+        XCTAssertEqual(photoModel.getURL(), URL(string: "url"))
+        
+        expectation.fulfill()
+    }
 }

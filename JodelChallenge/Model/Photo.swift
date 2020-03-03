@@ -9,16 +9,16 @@
 import Foundation
     
     struct Photo {
-        private var title : String
-        private var photoURL : URL
+        private var title: String
+        private var url: URL
         
-        init(title: String, photoURL: URL) {
+        init(title: String, url: URL) {
             self.title = title
-            self.photoURL = photoURL
+            self.url = url
         }
         
-        func getPhotoURL() -> URL {
-            return self.photoURL
+        func getURL() -> URL {
+            return self.url
         }
         
         func getTitle() -> String {

@@ -37,7 +37,7 @@ class FlickrAPIFetchController {
                     print(photoDictionary)
                     photos.append(Photo(
                         title: photoDictionary["title"] as! String,
-                        photoURL: fk.photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)))
+                        url: fk.photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)))
                 }
                 //SHOW NOT SUCCESS WHEN USER SCROLLS DOWN
                 if !isScrollDown {

@@ -16,7 +16,7 @@ class FeedCell : UICollectionViewCell {
     let imageZoomContoller = ImageZoomContoller()
     
     public func configure(with image : Photo) {
-        if let data = try? Data(contentsOf: image.getPhotoURL()) {
+        if let data = try? Data(contentsOf: image.getURL()) {
             imageView.image = UIImage(data: data)
             textView.text = image.getTitle()
         }
